@@ -1,6 +1,3 @@
-# Written by MiniGlome
-# Contact: MiniGlome@protonmail.com
-
 import datetime
 import hashlib
 import hmac
