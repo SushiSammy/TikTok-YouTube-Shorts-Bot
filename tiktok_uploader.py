@@ -9,6 +9,7 @@ import random
 import requests
 import time
 import zlib
+from bs4 import BeautifulSoup
 
 
 def sign(key, msg):
@@ -212,17 +213,23 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
         "X-Secsdk-Csrf-Request": "1",
         "X-Secsdk-Csrf-Version": "1.2.8"
     }
+
     time.sleep(5)
+
     r = session.head(url, headers=headers)
     if not assertSuccess(url, r):
         return False
     x_csrf_token = r.headers["X-Ware-Csrf-Token"].split(',')[1]
 
+    # print(f"Params are:")
+    # print(f"Text: {text}")
+    # print(f"Tags: {text_extra}")
+
     params = {
         "upload_param": {
             "video_param": {
                 "text": text,
-                "text_extra": json.dumps(text_extra),
+                "text_extra": text_extra,
                 "poster_delay": 0
             },
             "visibility_type": "0",
@@ -231,7 +238,7 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
             "allow_stitch": "1",
             "sound_exemption": "0",
             "geofencing_regions": [],
-            "creation_id": "a5d1832",
+            # "creation_id": "a5d1832",
             "is_uploaded_in_batch": False,
             "is_enable_playlist": False,
             "is_added_to_playlist": False
@@ -240,6 +247,7 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
         "aid": "1988",
         "draft": ""
     }
+
     if schedule_time:
         params["schedule_time"] = schedule_time
     headers = {"X-Secsdk-Csrf-Token": x_csrf_token}
