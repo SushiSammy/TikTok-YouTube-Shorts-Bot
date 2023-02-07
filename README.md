@@ -87,11 +87,4 @@ This command will schedule the video `my_video.mp4` for `01/01/2023 18:00:00` (t
 ```sh
 python3 Tiktok_uploader.py -i 7a9f3c5d8f6e4b2a1c9d8e7f6a5b4c3d -p my_video.mp4 -t "MY SUPER TITLE" --tags Funny Joke Fyp -s 1672592400
 ```
-
-## Donation
-If you want to support my work, you can send 2 or 3 Bitcoins 🙃 to this address: 
-```
-bc1q4nq8tjuezssy74d5amnrrq6ljvu7hd3l880m7l
-```
-![bitcoin_address](https://user-images.githubusercontent.com/54740007/169100171-1061c7a0-207e-459b-84de-2d6bb93b0f38.png)
 # tiktok_empire
