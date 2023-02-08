@@ -223,27 +223,40 @@ def uploadVideo(session_id, video, title, tags, schedule_time=0, verbose=True):
     # print(f"Tags: {text_extra}")
 
     params = {
-        "upload_param": {
-            "video_param": {
-                "text": text,
-                "text_extra": text_extra,
-                "poster_delay": 0
-            },
-            "visibility_type": "0",
-            "allow_comment": "1",
-            "allow_duet": "1",
-            "allow_stitch": "1",
-            "sound_exemption": "0",
-            "geofencing_regions": [],
-            # "creation_id": "a5d1832",
-            "is_uploaded_in_batch": False,
-            "is_enable_playlist": False,
-            "is_added_to_playlist": False
-        },
         "video_id": video_id,
+        "visibility_type": "0",
+        "poster_delay": "0",
+        "text": text,
+        "text_extra": json.dumps(text_extra),
+        "allow_comment": "1",  # Can be replaced by "0" to disallow comments
+        "allow_duet": "1",  # Can be replaced by "1" to allow duets (Only available for videos < 1min)
+        "allow_stitch": "1",  # Can be replaced by "1" to allow stitches (Only available for videos < 1min)
+        "sound_exemption": "0",
         "aid": "1988",
-        "draft": ""
     }
+
+    # params = {
+    #     "upload_param": {
+    #         "video_param": {
+    #             "text": text,
+    #             "text_extra": text_extra,
+    #             "poster_delay": 0
+    #         },
+    #         "visibility_type": "0",
+    #         "allow_comment": "1",
+    #         "allow_duet": "1",
+    #         "allow_stitch": "1",
+    #         "sound_exemption": "0",
+    #         "geofencing_regions": [],
+    #         # "creation_id": "a5d1832",
+    #         "is_uploaded_in_batch": False,
+    #         "is_enable_playlist": False,
+    #         "is_added_to_playlist": False
+    #     },
+    #     "video_id": video_id,
+    #     "aid": "1988",
+    #     "draft": ""
+    # }
 
     if schedule_time:
         params["schedule_time"] = schedule_time
