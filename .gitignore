@@ -117,3 +117,5 @@ fabric.properties
 *.mp4
 *.mp3
 *.png
+.idea
+.DS_Store
