@@ -2,3 +2,6 @@ requests
 beautifulsoup4
 pytube
 moviepy
+httplib2
+apiclient
+oauth2client
