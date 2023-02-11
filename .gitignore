@@ -119,3 +119,10 @@ fabric.properties
 *.png
 .idea
 .DS_Store
+client_secrets.json
+main.py-oauth2.json
+.idea/misc.xml
+.gitignore
+__pycache__/youtube_uploader.cpython-37.pyc
+__pycache__/config.cpython-37.pyc
+.idea/tiktok_empire.iml
