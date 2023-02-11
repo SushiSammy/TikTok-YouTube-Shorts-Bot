@@ -1,7 +1,9 @@
-requests
-beautifulsoup4
-pytube
-moviepy
-httplib2
+requests~=2.28.2
+beautifulsoup4~=4.11.2
+pytube~=12.1.2
+moviepy~=1.0.3
+httplib2~=0.21.0
 apiclient
-oauth2client
+oauth2client~=3.0.0
+Pillow~=9.4.0
+google-api-python-client~=1.5.3
