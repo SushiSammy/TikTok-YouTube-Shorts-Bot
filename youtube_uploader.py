@@ -9,9 +9,6 @@ import time
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
-# from apiclient.discovery import build
-# from apiclient.errors import HttpError
-# from apiclient.http import MediaFileUpload
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import run_flow, argparser
@@ -189,4 +186,3 @@ def upload2YT(clip_dir, youtube_config_dict):
         initialize_upload(youtube, args)
     except HttpError as e:
         print("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
-
