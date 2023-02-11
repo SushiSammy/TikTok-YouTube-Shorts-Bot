@@ -28,6 +28,7 @@ def download_background(filename="", uri=""):
         YouTube(uri, on_progress_callback=on_progress).streams.filter(res=f"{res}p").first().download(
             "./manifestation/backgrounds", filename=f"{filename}"
         )
+        break
 
     print("Background video downloaded successfully! 🎉")
 
