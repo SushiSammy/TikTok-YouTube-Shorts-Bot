@@ -118,6 +118,7 @@ fabric.properties
 *.mp3
 *.png
 .idea
+.idea/
 .DS_Store
 client_secrets.json
 main.py-oauth2.json

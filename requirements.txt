@@ -7,3 +7,4 @@ apiclient
 oauth2client~=3.0.0
 Pillow~=9.4.0
 google-api-python-client~=1.5.3
+pytz
