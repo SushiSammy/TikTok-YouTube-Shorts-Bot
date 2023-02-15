@@ -13,7 +13,7 @@
     </p>
 </p>
 
-## About The Project
+## About
 
 This project is a Python3 script that allows you to automatically upload and schedule TikTok videos. With this script, you can automate the process of uploading videos to TikTok, allowing you to save time and focus on creating content.
 
@@ -42,13 +42,9 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Import in your script
-
-You can copy the file `Tiktok_uploader.py` in your project folder and use it like this:
+### TikTok Auto Uploader
 
 ```python
-from tiktok_uploader import uploadVideo
-
 session_id = "7a9f3c5d8f6e4b2a1c9d8e7f6a5b4c3d"
 file = "my_video.mp4"
 title = "MY SUPER TITLE"
@@ -101,3 +97,7 @@ This command will schedule the video `my_video.mp4` for `01/01/2023 18:00:00` (t
 ```sh
 python3 tiktok_uploader.py -i 7a9f3c5d8f6e4b2a1c9d8e7f6a5b4c3d -p my_video.mp4 -t "MY SUPER TITLE" --tags Funny Joke Fyp -s 1672592400
 ```
+
+### YouTube Shorts Auto Uploader
+
+test
