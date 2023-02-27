@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import argparse
 import httplib2
 import os
 import random
@@ -11,7 +12,7 @@ from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
-from oauth2client.tools import run_flow, argparser
+from oauth2client.tools import run_flow
 
 # Explicitly tell the underlying HTTP transport library not to retry, since
 # we are handling retry logic ourselves.
@@ -155,14 +156,31 @@ def resumable_upload(insert_request):
             time.sleep(sleep_seconds)
 
 
-def upload2YT(clip_dir, youtube_config_dict):
+def uploadYouTubeVideo(clip_dir, youtube_config_dict):
+    print("Beginning upload lol")
     y = youtube_config_dict
     title, description, keywords, int_category, status = y['title'], y['description'], y['tags'], y['category'], y[
         'status']
 
-    args = argparser.parse_args()
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--auth_host_name', default='localhost',
+                        help='Hostname when running a local web server.')
+    parser.add_argument('--noauth_local_webserver', action='store_true',
+                        default=False, help='Do not run a local web server.')
+    parser.add_argument('--auth_host_port', default=[8080, 8090], type=int,
+                        nargs='*', help='Port web server should listen on.')
+    parser.add_argument(
+        '--logging_level', default='ERROR',
+        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'],
+        help='Set the logging level of detail.')
+    parser.add_argument("-m", "--mode", type=str, help="Options: manifestation, etc", required=True)
+
+    parser.add_argument("-id", "--session_id", help="TikTok sessionid cookie", required=True)
+
+
+    args = parser.parse_args()
     sys.argv = [sys.argv[0],
-                f'--noauth_local_webserver=True'
+                f'--noauth_local_webserver=True',
                 f'--file={clip_dir}',
                 f'--title={title}',
                 f'--description={description}',
