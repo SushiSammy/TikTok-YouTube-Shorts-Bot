@@ -100,17 +100,3 @@ def uploadTikTokVideo(session_id, video, title, tags):
         printError(url, r)
         return False
     return True
-
-
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--session_id", help="Tiktok sessionid cookie", required=True)
-    parser.add_argument("-p", "--path", help="Path to video file", required=True)
-    parser.add_argument("-t", "--title", help="Title of the video", required=True)
-    parser.add_argument("--tags", nargs='*', default=[], help="List of hashtags for the video")
-    parser.add_argument("-s", "--schedule_time", type=int, default=0, help="schedule timestamp for video upload")
-    args = parser.parse_args()
-    # python3 uploader.py -i 7a9f3c5d8f6e4b2a1c9d8e7f6a5b4c3d -p my_video.mp4 -t "MY SUPER TITLE" --tags Funny Joke Fyp
-    uploadVideo(args.session_id, args.path, args.title, args.tags)

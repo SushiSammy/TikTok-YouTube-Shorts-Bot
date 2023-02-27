@@ -17,8 +17,6 @@ from PIL import ImageFont
 from tiktok_uploader import uploadTikTokVideo
 from youtube_uploader import uploadYouTubeVideo
 
-from config import youtube
-
 # For testing purposes:
 # python -c 'import manifestation.manifestation as m; m.make_final_video()'
 def make_final_video(session_id=""):
@@ -143,12 +141,10 @@ def make_final_video(session_id=""):
     file = f"./manifestation/results/{video_id}.mp4"
     title = "Manifest wealth 💸 good things are coming"
     tags = "manifestation fyp spirituality"
-    # uploadTikTokVideo(session_id, file, title, tags.split())
+    uploadTikTokVideo(session_id, file, title, tags.split())
 
 
     # Post to YouTube
-    # youtube config dict can be cleaned up and gotten rid of
-    # print(youtube)
     youtube = {
         'title': title,
         'description': title,
@@ -156,5 +152,4 @@ def make_final_video(session_id=""):
         'category': 23,  # has to be an int, more about category below
         'status': 'public'  # {public, private, unlisted}
     }
-
     uploadYouTubeVideo(file, youtube)
