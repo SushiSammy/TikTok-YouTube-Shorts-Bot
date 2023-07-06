@@ -29,11 +29,6 @@ _Note that you need a **Business account** in order to use the **schedule featur
 
 Make sure you've already git installed. Then you can run the following commands to get the scripts on your computer:
 
-```sh
-git clone https://github.com/MiniGlome/Tiktok-uploader.git
-cd Tiktok-uploader
-```
-
 Install the required modules using this command:
 
 ```sh
